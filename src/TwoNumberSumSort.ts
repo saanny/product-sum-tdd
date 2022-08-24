@@ -1,7 +1,9 @@
+// Comment
 export function TwoNumberSumSort(arrayItems: Array<any>, targetNumber: number): Array<number> {
     arrayItems.sort((a, b) => a - b)
 
     let left = 0;
+
     let right = arrayItems.length - 1;
 
     while (left < right) {
