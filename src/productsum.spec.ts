@@ -1,30 +1,70 @@
-import { TwoNumberSumSort } from './TwoNumberSumSort';
 
-describe('Two Number Sum Problem', () => {
-    // [-4,-1,1,3,5,6,8,11] => 10 => [-1,11]
+import { ProductSum } from './ProductSum';
 
-    test("it shoud return [5,8]", () => {
-        // given => act
-        const numbers: Array<number> = [-4, -1, 1, 3, 5, 6, 8, 11];
+// [5, 2, [7, -1], 3, [6, [-13, 8], 4]] tobe => 12
 
-        // when => arrange
-        const action_trigger_two_number_sum = TwoNumberSumSort(numbers, 13);
+describe('Product Sum Problem', () => {
+    // given when then 
+    // arrang act assert 
 
-        // then => assert
-        expect(action_trigger_two_number_sum).toEqual([5, 8]);
+    // test('Product Sum', () => {
+    //     expect(ProductSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]])).toBe(12);
+    // });
 
-    })
+    test('it shoud return 7', () => {
+        // given
+        const numbers: any = [5, 2];
 
-    test("it shoud return [-1,11]", () => {
-        // given => act
-        const numbers: Array<number> = [-4, -1, 1, 3, 5, 6, 8, 11];
+        // when
+        const action_trigger_product_sum = ProductSum(numbers);
 
-        // when => arrange
-        const action_trigger_two_number_sum = TwoNumberSumSort(numbers, 10);
+        // then
+        expect(action_trigger_product_sum).toBe(7);
 
-        // then => assert
-        expect(action_trigger_two_number_sum).toEqual([-1, 11]);
+    });
+    test('it shoud return 19', () => {
+        // given
+        const numbers: any = [5, 2, [7, -1]];
 
-    })
+        // when
+        const action_trigger_product_sum = ProductSum(numbers);
 
+        // then
+        expect(action_trigger_product_sum).toBe(19);
+
+    });
+    test('it shoud return 22', () => {
+        // given
+        const numbers: any = [5, 2, [7, -1], 3];
+
+        // when
+        const action_trigger_product_sum = ProductSum(numbers);
+
+        // then
+        expect(action_trigger_product_sum).toBe(22);
+
+    });
+    test('it shoud return 12', () => {
+        // given
+        const numbers: any = [5, 2, [7, -1], 3, [6, [-13, 8], 4]];
+
+        // when
+        const action_trigger_product_sum = ProductSum(numbers);
+
+        // then
+        expect(action_trigger_product_sum).toBe(12);
+
+    });
+
+    test('it shoud return 84', () => {
+        // given
+        const numbers: any = [5, 2, [7, -1], 3, [6, [-13, 8, [5, -2]], 4]];
+
+        // when
+        const action_trigger_product_sum = ProductSum(numbers);
+
+        // then
+        expect(action_trigger_product_sum).toBe(84);
+
+    });
 });
